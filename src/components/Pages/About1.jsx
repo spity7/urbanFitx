@@ -60,7 +60,7 @@ class About1 extends React.Component {
                           "url(images/background/cross-line2.png)",
                       }}
                     >
-                      <h3 className="sep-line-one">WHY CHOOSE URBAN FITX?</h3>
+                      <h3 className="sep-line-one">WHY CHOOSE URBAN FITX ?</h3>
                     </div>
                   </div>
                 </div>

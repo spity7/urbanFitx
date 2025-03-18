@@ -56,6 +56,7 @@ import ShopCheckout from "./Pages/ShopCheckout";
 import Faq from "./Pages/Faq";
 import ContactUs from "./Pages/ContactUs";
 import ScrollToTop from "./Common/ScrollToTop";
+import Career from "./Pages/Career";
 
 class Components extends React.Component {
   render() {
@@ -148,6 +149,8 @@ class Components extends React.Component {
 
             <Route path="/faq" element={<Faq />} /> */}
             <Route path="/contact-us" element={<ContactUs />} />
+
+            <Route path="/Career" element={<Career />} />
 
             <Route element={<Error />} />
           </Routes>

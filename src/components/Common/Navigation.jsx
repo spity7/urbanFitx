@@ -185,6 +185,10 @@ class Navigation extends React.Component {
             </ul> */}
           </li>
 
+          <li>
+            <NavLink to={"/career"}>Career</NavLink>
+          </li>
+
           {/* 
           <li>
             <NavLink to={""}>Blog</NavLink>
