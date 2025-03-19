@@ -244,7 +244,7 @@ class Navigation extends React.Component {
         </ul>
 
         <a
-          href="https://wa.me/00971569961445"
+          href="https://wa.me/971567756759"
           target="_blank"
           rel="noopener noreferrer"
           className="whatsapp-button-2"
