@@ -27,7 +27,7 @@ const Career = () => {
     data.append("file", formData.file); // Append the file
 
     try {
-      const response = await axios.post("http://localhost:5000/send-cv", data, {
+      const response = await axios.post("https://urbanfitxback.onrender.com/send-cv", data, {
         headers: {
           "Content-Type": "multipart/form-data", // Important for file uploads
         },

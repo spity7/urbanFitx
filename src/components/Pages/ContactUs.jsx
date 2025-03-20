@@ -25,7 +25,7 @@ const ContactUs = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/send-email",
+        "https://urbanfitxback.onrender.com/send-email",
         formData
       );
       alert(response.data.message);
