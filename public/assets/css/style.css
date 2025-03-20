@@ -3536,7 +3536,7 @@ ol.list-num-count.list-outline-none > li:before {
 .site-button-secondry {
   position: relative;
   padding: 15px 15px;
-  letter-spacing: 8px;
+  letter-spacing: 4px;
   font-weight: 400;
   display: inline-block;
   font-size: 14px;

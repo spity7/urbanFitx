@@ -3,6 +3,9 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const multer = require("multer");
+const fs = require("fs");
+const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -10,6 +13,55 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Multer setup for file upload
+const upload = multer({ dest: "uploads/" }); // Store files temporarily
+
+app.post("/send-cv", upload.single("file"), async (req, res) => {
+  const file = req.file;
+
+  if (!file) {
+    return res.status(400).json({ message: "File is required" });
+  }
+
+  // Configure nodemailer
+  let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.EMAIL_USER, // Your Gmail address
+      pass: process.env.EMAIL_PASS, // Your Gmail App Password
+    },
+  });
+
+  let mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: "th.rider.clan@gmail.com",
+    subject: "New Contact Form Submission with File",
+    text: `Heyyyyy`,
+    attachments: [
+      {
+        filename: file.originalname,
+        path: file.path, // Attach the uploaded file
+      },
+    ],
+  };
+
+  try {
+    let info = await transporter.sendMail(mailOptions);
+
+    // Delete the file after sending
+    fs.unlinkSync(file.path);
+
+    res.json({ message: "Email sent successfully" });
+  } catch (error) {
+    console.error("Error sending email:", error);
+    res.status(500).json({ message: "Failed to send email" });
+  }
+});
 
 // Route to handle form submission
 app.post("/send-email", async (req, res) => {
