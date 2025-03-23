@@ -39,9 +39,9 @@ app.post("/send-cv", upload.single("file"), async (req, res) => {
 
   let mailOptions = {
     from: process.env.EMAIL_USER,
-    to: "th.rider.clan@gmail.com",
+    to: "info@urbanfitx.com",
     subject: "New Contact Form Submission with File",
-    text: `Heyyyyy`,
+    text: `Check the CV`,
     attachments: [
       {
         filename: file.originalname,
@@ -81,7 +81,7 @@ app.post("/send-email", async (req, res) => {
   // Email options
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: "th.rider.clan@gmail.com",
+    to: "info@urbanfitx.com",
     subject: "New Contact Form Submission",
     text: `You have a new contact form submission:
         \nName: ${name}

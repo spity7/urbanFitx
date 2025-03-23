@@ -7,35 +7,41 @@ const services = [
     title: "Commercial Fit-outs",
     description:
       "Office spaces, co-working environments, and corporate interiors.",
+    image: require("./../../images/services/service-projects/1c720465d270dbcc3bf7b642133deaf4.jpg"),
   },
   {
     count: "02",
     title: "Residential Fit-outs",
     description: "Customized home interiors, villas, and apartments.",
+    image: require("./../../images/services/service-projects/_interior_design_living_room_oxfy5ggxim6if1f38pxh_2.png"),
   },
   {
     count: "03",
     title: "Retail Fit-outs",
     description:
       "Boutiques, showrooms, and retail spaces designed to enhance customer experience.",
+    image: require("./../../images/services/service-projects/interior_fit-out_gyrx6hd11lyk0zixd3ua_3.png"),
   },
   {
     count: "04",
     title: " Hospitality Fit-outs",
     description:
       " Restaurants, cafes, and hotels that combine functionality with style.",
+    image: require("./../../images/services/service-projects/luxury_interior_fit-out_kitchen_6e7mm519v92sj16g0g2i_0.png"),
   },
   {
     count: "05",
     title: "Design and Build",
     description:
       "End-to-end solutions from conceptual design to project execution.",
+    image: require("./../../images/services/service-projects/luxury_interior_fit-out_kitchen_bbxjyg0tqy6lpy92ip1u_1.png"),
   },
   {
     count: "06",
     title: "Consultation",
     description:
       "We provides tailored advice on space planning, material selection, and cost optimization.",
+    image: require("./../../images/services/service-projects/luxury_interior_fit-out_kitchen_k4e2w45jta5xdc9v8xkh_2.png"),
   },
 ];
 
@@ -74,11 +80,7 @@ class Services6 extends React.Component {
                   >
                     <div className="number-block-two animate-in-to-top bdr-gray-light bdr-solid bdr-1">
                       <div className="figcaption bg-white  p-a30">
-                        <img
-                          src={require("./../../images/services/service-projects/1c720465d270dbcc3bf7b642133deaf4.jpg")}
-                          alt=""
-                          className="m-b20"
-                        />
+                        <img src={item.image} alt="" className="m-b20" />
                         <h4 className="m-t0">{item.title}</h4>
                         <p>{item.description}</p>
                         {/* <NavLink
